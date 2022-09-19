@@ -1,0 +1,10 @@
+﻿
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>WELCOME</h1>
+<h1>@User.Identity.Name </h1>
+<a asp-action="Logout" class="btn btn-danger ">Logout</a>

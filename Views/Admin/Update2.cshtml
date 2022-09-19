@@ -1,0 +1,39 @@
+﻿@model AppUser
+
+@{
+    ViewData["Title"] = "Update2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Update2 </h1>
+
+<div class="row">
+    <div class="col-3 ">
+        <form method="post" asp-action="Update2">
+            <div class="form-floating">
+                <input asp-for="Id" class="form-control" disabled placeholder="Id" id="userid" />
+                <label for="userid">Id</label>
+            </div>
+            <div class="form-floating">
+                <input asp-for="UserName" class="form-control" type="text" placeholder="Name" id="userName" />
+                <label for="userName">Name</label>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Email" class="form-control" placeholder="Email" id="mail" />
+                <label for="mail">Email</label>
+            </div>
+            <div class="form-floating">
+                <input name="password" class="form-control" />
+                <label for="key">Password</label>
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
+            <div class="row-cols-1">
+                <button class="btn btn-primary bg-opacity-25 mb-1" type="submit">Save</button>
+            </div>
+            <div class="row-cols-1">
+                <a class="btn btn-info bg-opacity-25" href="/Admin/Index">List</a>
+            </div>
+        </form>
+    </div>
+</div>

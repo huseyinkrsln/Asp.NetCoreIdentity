@@ -1,0 +1,33 @@
+﻿@model WebApp.Models.ViewModels.AppUserViewModel
+
+<h1 class=""> New User</h1>
+<div class="row">
+    <div class="col-3 ">
+        <form method="post" asp-action="Create">
+            <div class="form-floating">
+                <input asp-for="UserName" class="form-control" type="text" placeholder="Name" id="userName" />
+                <label for="userName">Name</label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Email" class="form-control" placeholder="Email" id="mail" />
+                <label for="mail">Email</label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Password " class="form-control" type="password" placeholder="Password" id=password />
+                <label for="password">Password</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row-cols-1">
+                <button class="btn btn-primary bg-opacity-25 mb-1" type="submit">Create</button>
+            </div>
+            <div class="row-cols-1">
+                <a class="btn btn-info bg-opacity-25" href="/Admin/Index">List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

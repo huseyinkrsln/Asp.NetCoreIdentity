@@ -1,0 +1,29 @@
+﻿@model WebApp.Models.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 class=""> Login</h1>
+<div class="row">
+    <div class="col-3 ">
+        <form method="post" asp-action="Login">
+            <div class="form-floating">
+                <input asp-for="Email" class="form-control" type="text" placeholder="Email" id="mail" />
+                <label for="mail">Email</label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Password" class="form-control" placeholder="Password" id="password" />
+                <label for="password">Password</label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="checkbox mb-3">
+                <label><input asp-for="RememberMe"> Remember me</label>
+            </div>
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row-cols-1">
+                <button class="btn btn-danger bg-opacity-25" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
