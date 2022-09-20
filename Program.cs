@@ -40,6 +40,8 @@ builder.Services.AddIdentity<AppUser, AppRole>(x =>
 
 builder.Services.ConfigureApplicationCookie(x =>
 {
+    x.Cookie.Name = "WebAppIdentity";
+    x.Cookie.HttpOnly = false;
     x.LoginPath = "/Home/Login";
     x.SlidingExpiration = true;
     x.ExpireTimeSpan = TimeSpan.FromMinutes(2);
@@ -47,7 +49,6 @@ builder.Services.ConfigureApplicationCookie(x =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -64,7 +65,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
 using WebApp.Models.ViewModels;
@@ -43,6 +44,7 @@ namespace WebApp.Controllers
             }
         }
 
+        
         public IActionResult Index()
         {
             return View(_userManager.Users);

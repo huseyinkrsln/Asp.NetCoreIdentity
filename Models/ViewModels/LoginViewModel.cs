@@ -9,6 +9,7 @@ namespace WebApp.Models.ViewModels
         public string Email { get; set; }
         [Required(ErrorMessage ="Fill this field")]
         public string Password { get; set; }
+        public string ReturnUrl { get; set; }
         public bool RememberMe { get; set; }
 
     }
