@@ -4,4 +4,4 @@
 -Installation
 -CRUD operations
 -Custom User and Password Validations
-
+-Cookie Authentication
